@@ -8,7 +8,7 @@
     <el-table-column
       prop="0"
       label=""
-      width="100">
+      width="60">
     </el-table-column>
     <el-table-column
       prop="1"
@@ -72,7 +72,13 @@
     data () {
       return {
         priod: null,
-        balls: [ {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {} ]
+        balls: (function () {
+          var tlBalls = []
+          for (var i = 0; i < 10; i++) {
+            tlBalls[i] = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 }
+          }
+          return tlBalls
+        }())
       }
     },
     methods: {
@@ -81,37 +87,6 @@
       }
     },
     created: function () {
-      // this.$http.get('https://www.1396j.com/pk10/getawarddata')
-      //   .then((res) => {
-      //     var priod = res.data.current.period
-      //     // console.log(res.data)
-      //     for (var j = 0; j < 15; j++) {
-      //       this.balls[j][0] = priod
-      //       priod = priod - 1
-      //     }
-      //   })
-      // for (var i = 1; i < 11; i++) {
-      //   console.log('AAAAA' + i)
-      //   this.$http.post('https://www.1396j.com/pk10/NumbertrendData?ball=' + i + '&count=15')
-      //     .then((res) => {
-      //       var index = res.url.substr(48, 1)
-      //       var index2 = res.url.substr(49, 1)
-      //       if (index2 === '0') {
-      //         index = 10
-      //       }
-      //       console.log(index)
-      //       // var Tldata = {}
-      //       console.log(res)
-      //       for (var j = 0; j < 15; j++) {
-      //         if (res.data[j]) {
-      //           console.log(index + ' ' + res.data[j].number)
-      //           this.balls[14 - j][index] = res.data[j].number
-      //         }
-      //       }
-      //       console.log(this.balls)
-      //       // this.balls.push(Tldata)
-      //     })
-      // }
       this.$http.get('https://api.api68.com/pks/getPksHistoryList.do?date=2019-03-21&lotCode=10001')
         .then((res) => {
           // var priod = res.data.current.period
@@ -119,6 +94,7 @@
           for (let i in tlData) {
             var data = tlData[i]
             var strs = data.preDrawCode.split(',')
+            // this.balls[i] = []
             for (let j in strs) {
               console.log(i + ' ' + j)
               if (this.balls[i]) {
@@ -127,10 +103,6 @@
             }
           }
           console.log(this.balls)
-          // for (var j = 0; j < 15; j++) {
-          //   this.balls[j][0] = priod
-          //   priod = priod - 1
-          // }
         })
     }
   }

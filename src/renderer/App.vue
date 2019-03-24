@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     
-    <!-- <landing-page></landing-page> -->
-    <div>
+    <landing-page></landing-page>
+    <!-- <div>
     <ul>
       <li v-for="item in links"><a @click="$goRoute(item.route)">{{item.text}}</a></li>
     </ul>
     <router-view></router-view>
-  </div>
+  </div> -->
   </div>
 </template>
 
