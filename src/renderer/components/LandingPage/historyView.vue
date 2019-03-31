@@ -1,26 +1,25 @@
 <template>
 <div>
-    <el-container>
-  <el-header>
-      <el-container>
-    <el-input  v-model="input" placeholder="请输入内容">
-
-    </el-input>
-    <el-input  v-model="input" placeholder="请输入内容"></el-input>
-      
-    <el-date-picker
-      type="date"
-      placeholder="选择日期">
-    </el-date-picker>
-    <el-date-picker
-      type="date"
-      placeholder="选择日期">
-    </el-date-picker>
-      </el-container>
-  <!-- </div> -->
-  </el-header>
+<el-container>
   <el-main>
+      <el-container>
+          <el-form :inline="true"  class="demo-form-inline">
+            <el-form-item label="审批人">
+                <el-input placeholder="审批人"></el-input>
+            </el-form-item>
+            <el-form-item label="活动区域">
+                <el-select placeholder="活动区域">
+                <el-option label="区域一" ></el-option>
+                <el-option label="区域二" ></el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" >查询</el-button>
+            </el-form-item>
+            </el-form>
+      </el-container>
   <el-container>
+      
     <el-table
     :data="balls"
     border
