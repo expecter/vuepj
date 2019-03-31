@@ -1,18 +1,23 @@
-<template>
-  <div id="app">
+<template>  
+  <el-container>
     
-    <landing-page></landing-page>
-    <!-- <div>
-    <ul>
-      <li v-for="item in links"><a @click="$goRoute(item.route)">{{item.text}}</a></li>
-    </ul>
-    <router-view></router-view>
-  </div> -->
-  </div>
+    <el-aside width="200px"></el-aside>
+    <el-main>
+      <div id="app">    
+        <landing-page></landing-page>
+        <!-- <div>
+        <ul>
+          <li v-for="item in links"><a @click="$goRoute(item.route)">{{item.text}}</a></li>
+        </ul>
+        <router-view></router-view>
+      </div> -->
+      </div>
+    </el-main>
+  </el-container>
 </template>
 
 <script>
-  import LandingPage from '@/components/LandingPage'
+  import LandingPage from '@/components/LandingPage/historyView'
 
   export default {
     name: 'electronui',
