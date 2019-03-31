@@ -2,7 +2,7 @@
 <div>
   <el-container>
     <el-header height = "120px">
-      哈哈
+      哈哈11
     <el-input  v-model="input" placeholder="请输入内容"></el-input>
     <el-input  v-model="input" placeholder="请输入内容"></el-input>
     </el-header>
