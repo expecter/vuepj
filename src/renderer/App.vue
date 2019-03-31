@@ -17,7 +17,8 @@
 </template>
 
 <script>
-  import LandingPage from '@/components/LandingPage/historyView'
+  // import LandingPage from '@/components/LandingPage/historyView'
+  import LandingPage from '@/components/pages/history'
 
   export default {
     name: 'electronui',
