@@ -1,7 +1,8 @@
 <template>
 <div>
     <el-container>
-  <el-header height = "120px">
+  <el-header>
+      <el-container>
     <el-input  v-model="input" placeholder="请输入内容">
 
     </el-input>
@@ -15,6 +16,7 @@
       type="date"
       placeholder="选择日期">
     </el-date-picker>
+      </el-container>
   <!-- </div> -->
   </el-header>
   <el-main>
