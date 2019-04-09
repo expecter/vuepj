@@ -1,7 +1,21 @@
 <template>  
   <el-container>
     
-    <el-aside width="200px"></el-aside>
+    <el-aside width="200px">
+      <el-menu
+      default-active="2"
+      class="el-menu-vertical-demo"
+      @open="handleOpen"
+      @select="handleSelect"
+      @close="handleClose">
+      <div v-for="item in navigations">
+      <el-menu-item :index= item.index >
+        <i class="el-icon-menu"></i>
+        <span slot="title">{{item.text}}</span>
+      </el-menu-item>
+      </div>
+      </el-menu>
+    </el-aside>
     <el-main>
       <div id="app">    
         <landing-page></landing-page>
@@ -40,7 +54,32 @@
             text: '水蜜桃',
             route: '/page02'
           }
+        ],
+        navigations: [
+          {
+            text: 'item1',
+            index: '1'
+          },
+          {
+            text: 'item2',
+            index: '1'
+          },
+          {
+            text: 'item3',
+            index: '1'
+          }
         ]
+      }
+    },
+    methods: {
+      handleOpen (key, keyPath) {
+        console.log(key, keyPath)
+      },
+      handleClose (key, keyPath) {
+        console.log(key, keyPath)
+      },
+      handleSelect (key, keyPath) {
+        console.log(key, keyPath)
       }
     }
   }
